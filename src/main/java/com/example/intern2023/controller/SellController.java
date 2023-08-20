@@ -1,12 +1,10 @@
-package com.example.intern2023.comtroller;
+package com.example.intern2023.controller;
 
 import com.example.intern2023.entities.Sell;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.intern2023.repository.SellRepository;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
