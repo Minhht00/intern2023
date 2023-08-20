@@ -100,10 +100,12 @@ public class SellController {
         float sum = 0;
         for (int i = 0; i < 30; i = i + 7) {
             listOfWeek = calculateSellOfWeek(i);
-            for(float list : listOfWeek) {
-                sum += list;
+            float num = 0;
+            for (int j = 0; j < listOfWeek.size(); j++) {
+                sum += listOfWeek.get(j);
             }
             listAllWeek.add(sum);
+            sum -= sum;
         }
         return listAllWeek;
     }
@@ -114,13 +116,13 @@ public class SellController {
         float badOfCup = 0;
         float remainder = 0;
         float sell = 0;
-        List<Float> sellOfWeek = new ArrayList<>();
+        List<Float> sellOfDay = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             badOfCup = list.get(i)/5;
             sell = badOfCup * BAD_RICE_OF_CUP * PRICE_ONE_G_GOOD_RICE - badOfCup * BAD_RICE_OF_CUP * PRICE_ONE_G_BAD_RICE;
-            sellOfWeek.add(sell);
+            sellOfDay.add(sell);
         }
-        return sellOfWeek;
+        return sellOfDay;
     }
 
 
